@@ -6,7 +6,19 @@ h1
 {   padding: 10px;
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+    
 
 
 }
 
+img{
+    margin-left: 15px;
+    padding: 10px;
+    height: 70px;
+    width: 70px;
+}
+
+p{
+    
+}
