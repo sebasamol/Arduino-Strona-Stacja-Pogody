@@ -8,11 +8,29 @@
         
         <title>Stacja meteorologiczna ESP8266 </title>
         <link rel="icon" href="/grafika/station.png">
-
         <link rel="stylesheet" href="style.css">
+    <script>
+        function display_c(){
+            var refresh=1000; // Refresh rate in milli seconds
+            mytime=setTimeout('display_ct()',refresh)
+            }
+
+            function display_ct() {
+                var x = new Date()
+                var x1=x.toUTCString();// changing the display to UTC string
+                document.getElementById('ct').innerHTML = x1;
+                tt=display_c();
+            }
+            setTimeout(function(){
+            window.location.reload(1);
+            }, 5000);
+    </script>
     </head>
     <body>
         <h1>Stacja meteorologiczna</h1>
+            <body style="text-align: center;" onload="display_ct()">
+                <span id='ct'></span>
+            </body>
 
             <div class="container">
               <div class="heading">
@@ -20,12 +38,12 @@
                   <p>Odczyt na zewnątrz:</p>
               </div>
                     <div class="parametres">
-                        <p>Temperatura:</p>
                         <img src="/grafika/high-temperature.png">
-                        <p>Wilgotność:</p>
+                        <p>Temperatura:</p>
                         <img src="/grafika/humidity.png">
-                        <p>Ciśnienie:</p>
+                        <p>Wilgotność:</p>
                         <img src="/grafika/barometer.png">
+                        <p>Ciśnienie:</p>
                         
                     </div>
               
@@ -34,14 +52,17 @@
                   <p>Odczyt na dworze:</p>
                 </div>
                     <div class="parametres">
-                        <p>Temperatura:</p>
                         <img src="/grafika/high-temperature.png">
-                        <p>Wilgotność:</p>
+                        <p>Temperatura:</p>
                         <img src="/grafika/humidity.png">
-                        <p>Ciśnienie:</p>
+                        <p>Wilgotność:</p>
                         <img src="/grafika/barometer.png">
+                        <p>Ciśnienie:</p>
                         
-                        </div>
+                     </div>
+
+                    
+
 
                 
             </div>
