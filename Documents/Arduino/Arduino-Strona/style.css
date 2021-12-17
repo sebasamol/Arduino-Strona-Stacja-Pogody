@@ -1,7 +1,7 @@
 body
 {
     background-image: radial-gradient(73% 147%, #EADFDF 59%, #ECE2DF 100%), radial-gradient(91% 146%, rgba(255,255,255,0.50) 47%, rgba(0,0,0,0.50) 100%);
- background-blend-mode: screen;
+    background-blend-mode: screen;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -84,4 +84,5 @@ span
     margin-left: 15px;
     font-size: 20px;
 }
+
 
