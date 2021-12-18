@@ -5,6 +5,7 @@ body
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
+    overflow: hidden;
 }
 h1
 {   font-weight: normal;
@@ -62,7 +63,7 @@ h2
     padding: 10px;
     font-family: 'Courier New', Courier, monospace;
     display: inline-flex;
-    margin-left: 20px;
+    
 }
 
 .parametres img
@@ -73,16 +74,9 @@ h2
     height: 40px;
     width: 40px;
 }
- .parametres p
+.parametres p
  {
      margin-left: 10px;
  }
-
-span
-{
-    padding: 15px;
-    margin-left: 15px;
-    font-size: 20px;
-}
 
 

@@ -10,53 +10,55 @@
         <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/1753/1753451.png">
         <link rel="stylesheet" href="style.css">
     <script>
-        function display_c(){
-            var refresh=1000; // Refresh rate in milli seconds
-            mytime=setTimeout('display_ct()',refresh)
-            }
+        function startTime() {
+            const today = new Date();
+            let h = today.getHours();
+            let m = today.getMinutes();
+            let s = today.getSeconds();
+            
+            m = checkTime(m);
+            s = checkTime(s);
+            document.getElementById('txt').innerHTML = h + ":" + m + ":" + s ;
+            setTimeout(startTime, 1000);
+        }
 
-            function display_ct() {
-                var x = new Date()
-                var x1=x.toUTCString();// changing the display to UTC string
-                document.getElementById('ct').innerHTML = x1;
-                tt=display_c();
+            function checkTime(i) {
+            if (i < 10) {i = "0" + i}; 
+            return i;
             }
-            setTimeout(function(){
-            window.location.reload(1);
-            }, 5000);
     </script>
     </head>
     <body>
-        <h1>Stacja meteorologiczna</h1>
-            <body style="text-align: center; font-family: 'Courier New', Courier, mononospace;"  onload="display_ct()">
-                <span id='ct'></span>
-            </body>
+        
+        <h2>Stacja meteorologiczna</h2>
+            <body style="text-align: center; font-family: 'Courier New', Courier, mononospace;"  onload="startTime()">
+                <div id="txt"></div>
 
             <div class="container">
               <div class="heading">
-                  <img src="https://cdn-icons-png.flaticon.com/512/3936/3936819.png">
+                  <img src="https://cdn-icons-png.flaticon.com/512/829/829180.png">
                   <p>Odczyt na zewnątrz:</p>
               </div>
                     <div class="parametres">
-                        <img src="https://cdn-icons.flaticon.com/png/512/1585/premium/1585441.png?token=exp=1639763577~hmac=369ca6699763fa2bd7288abe02ca4eec">
-                        <p>Temperatura:</p>
-                        <img src="https://cdn-icons.flaticon.com/png/512/3262/premium/3262966.png?token=exp=1639763615~hmac=50925a39837d4c01c3dd0c2cb595d8fb">
-                        <p>Wilgotność:</p>
-                        <img src="https://cdn-icons.flaticon.com/png/512/3872/premium/3872582.png?token=exp=1639763662~hmac=51bb06239ebfee9f4fb8bed1d0845a3b">
-                        <p>Ciśnienie:</p>
+                        <img src="https://cdn-icons-png.flaticon.com/512/481/481431.png">
+                        <p>55</p>
+                        <img src="https://cdn-icons-png.flaticon.com/512/727/727790.png">
+                        <p>55</p>
+                        <img src="https://cdn-icons-png.flaticon.com/512/481/481430.png">
+                        <p>55</p>
                         
                     </div>
               
               <div class="heading">
-                  <img src="https://cdn-icons.flaticon.com/png/512/2163/premium/2163350.png?token=exp=1639763693~hmac=c319e4348e7f18b878494ffe4c4b7dfe">
+                  <img src="https://cdn-icons-png.flaticon.com/512/263/263115.png">
                   <p>Odczyt na dworze:</p>
                 </div>
                     <div class="parametres">
-                        <img src="https://cdn-icons.flaticon.com/png/512/1585/premium/1585441.png?token=exp=1639763577~hmac=369ca6699763fa2bd7288abe02ca4eec">
-                        <p>Temperatura:</p>
-                        <img src="https://cdn-icons.flaticon.com/png/512/3262/premium/3262966.png?token=exp=1639763615~hmac=50925a39837d4c01c3dd0c2cb595d8fb">
-                        <p>Wilgotność:</p>
+                        <img src="https://cdn-icons-png.flaticon.com/512/481/481431.png">
+                        <p>55</p>
                         <img src="https://cdn-icons-png.flaticon.com/512/4150/4150958.png">
+                        <p>55</p>
+                        <img src="https://cdn-icons-png.flaticon.com/512/727/727790.png">
                         
                         
                      </div>
