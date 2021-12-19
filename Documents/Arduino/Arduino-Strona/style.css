@@ -62,21 +62,22 @@ h2
     font-size: 18px;
     padding: 10px;
     font-family: 'Courier New', Courier, monospace;
-    display: inline-flex;
+    display: ruby-base-container;
     
 }
 
 .parametres img
 {
+    
     top: 5px;
-    left: 5px;
+    left: 2px;
     position: relative;
     height: 40px;
     width: 40px;
 }
 .parametres p
  {
-     margin-left: 10px;
+     margin-left: 5px;
  }
 
 
