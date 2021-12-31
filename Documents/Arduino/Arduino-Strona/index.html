@@ -1,3 +1,5 @@
+<!--Wzór strony internetowej dla stacji pogodowej na bazie ESP8266-->
+
 <!DOCTYPE html>
 <html lang="pl-PL">
     <head>
@@ -9,16 +11,24 @@
         <title>Stacja meteorologiczna ESP8266 </title>
         <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/1753/1753451.png">
         <link rel="stylesheet" href="style.css">
-    <script>
+        
+     <!--Skrypt slużący do wyświetlania aktualnej godziny oraz daty-->   
+
+    <script> 
+        
         function startTime() {
             const today = new Date();
             let h = today.getHours();
             let m = today.getMinutes();
             let s = today.getSeconds();
-            
+            let day = today.getDate();
+            let year = today.getFullYear();
+            let month = today.getMonth();
+
+            h = checkTime(h);
             m = checkTime(m);
             s = checkTime(s);
-            document.getElementById('txt').innerHTML = h + ":" + m + ":" + s ;
+            document.getElementById('txt').innerHTML = day + "-" + month + "-" + year +" "+ h + ":" + m + ":" + s ;
             setTimeout(startTime, 1000);
         }
 
@@ -33,8 +43,11 @@
         <h2>Stacja meteorologiczna</h2>
             <body style="text-align: center; font-family: 'Courier New', Courier, mononospace;"  onload="startTime()">
                 <div id="txt"></div>
-
+                
             <div class="container">
+
+                <!--Odczyt z czujników umieszczonych  na zewnątrz-->
+
               <div class="heading">
                   <img src="https://cdn-icons-png.flaticon.com/512/829/829180.png">
                   <p>Odczyt na zewnątrz:</p>
@@ -48,22 +61,26 @@
                         <p>111.20hpA</p>
                         
                     </div>
-              
+
+                    <!--Odczyt z czujników umieszczonych w domu-->
+
               <div class="heading">
                   <img src="https://cdn-icons-png.flaticon.com/512/263/263115.png">
-                  <p>Odczyt na dworze:</p>
+                  <p>Odczyt w domu:</p>
                 </div>
                     <div class="parametres">
                         <img src="https://cdn-icons-png.flaticon.com/512/481/481431.png">
                         <p>55</p>
                         <img src="https://cdn-icons-png.flaticon.com/512/4150/4150958.png">
                         <p>55</p>
-                        <img src="https://cdn-icons-png.flaticon.com/512/727/727790.png">
                         
                         
                      </div>
                 
             </div>
+
+            <!--Dodatkowe informacje-->
+
             <div id="info">
                 <p>Pomiary dla miasta Poznań</p>
                 <a href="https://www.accuweather.com/pl/pl/pozna%C5%84/276594/weather-forecast/276594">Tu znajdziesz szczegółową prognozę pogody</a>
